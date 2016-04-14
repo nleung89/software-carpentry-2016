@@ -1,9 +1,10 @@
-#changing directory
+#ANALYZING RAPTOR DATA
+#loading data
 setwd("~/Desktop/software-carpentry-2016/data-files/r-lesson/data/")
 list.files()
 read.csv(file = "inflammation-01.csv", header = FALSE)
 
-#assigning variables and manipulating them
+#assigning variables
 weight_kg <- 55
 weight_kg
   #weight in pounds
@@ -14,22 +15,21 @@ weight_kg
 weight_lb <- 2.2 * weight_kg
 weight_lb
 
+#manipulating data
 dat <- read.csv(file = "inflammation-01.csv", header = FALSE)
 head(dat)
 class(dat)
 dim(dat)
-
-#first value in dat
+  #first value in dat
 dat[1,1]
-#middle value in dat
+  #middle value in dat
 dat[30,20]
 dat[1:4, 1:10]
 dat[5:10, 1:10]
 dat[c(3,8,37,56), c(10,14,29)]
-
-#all columns from row 5
+  #all columns from row 5
 dat[5,]
-#all rows from row 16
+  #all rows from row 16
 dat[,16]
 
 raptor_1 <- dat[1,]
@@ -53,7 +53,7 @@ rowMeans(dat)
 #same as apply(dat,2,mean
 colMeans(dat)
 
-#practice problem
+#challenge-slicing data
 animal <- c("m", "o", "n", "k", "e", "y")
 animal[1:3]
 animal[4:6]
@@ -65,6 +65,7 @@ animal[-1:-4]
 #specify individual values in a list
 animal[c(5,2,3)]
 
+#plotting
 plot(avg_day_inflammation)
 max_day_inflammation <- apply(dat, 2, max)
 plot(max_day_inflammation)
@@ -102,9 +103,5 @@ fence <- function(original,wrapper) {
 }
 fence(original,wrapper)
 
-#the call stack
 
-#testing and documenting
-
-#defining defaults
 
