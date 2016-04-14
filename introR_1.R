@@ -6,12 +6,11 @@ read.csv(file = "inflammation-01.csv", header = FALSE)
 #assigning variables and manipulating them
 weight_kg <- 55
 weight_kg
-#weight in pounds
+  #weight in pounds
 2.2 * weight_kg
 weight_kg <- 57.5
 weight_kg
-
-#calculate weight in pounds, save to variable weight_lb
+  #calculate weight in pounds, save to variable weight_lb
 weight_lb <- 2.2 * weight_kg
 weight_lb
 
@@ -22,13 +21,10 @@ dim(dat)
 
 #first value in dat
 dat[1,1]
-
 #middle value in dat
 dat[30,20]
-
 dat[1:4, 1:10]
 dat[5:10, 1:10]
-
 dat[c(3,8,37,56), c(10,14,29)]
 
 #all columns from row 5
@@ -76,4 +72,39 @@ min_day_inflammation <- apply(dat, 2, min)
 plot(min_day_inflammation)
 sd_day_inflammation <- apply(dat, 2, sd)
 plot(sd_day_inflammation)
+
+#CREATING FUNCTIONS
+#defining a function: fahrenheit to kelvin
+fahr_to_kelvin <-function(temp){
+  kelvin <-((temp-32)*(5/9)) + 273.15
+  return(kelvin)
+}
+fahr_to_kelvin(100)
+               
+#composing functions  
+kelvin_to_celsius <- function(temp) {
+  celsius <- temp - 273.15
+  return(celsius)
+}
+kelvin_to_celsius(0)
+
+fahr_to_celsius <- function(temp) {
+  temp_k <- fahr_to_kelvin(temp)
+  result <- kelvin_to_celsius(temp_k)
+  return(result)
+}
+fahr_to_celsius(32.0)
+
+original <- c("a","b","c","d","e")
+wrapper <- "zzz"
+fence <- function(original,wrapper) {
+  return(c(wrapper,original,wrapper))
+}
+fence(original,wrapper)
+
+#the call stack
+
+#testing and documenting
+
+#defining defaults
 
