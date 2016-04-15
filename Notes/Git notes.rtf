@@ -36,6 +36,21 @@ git pull origin master\
 \
 \
 \ul Git PART TWO\ulnone \
-HEAD~1 = head minus one, means the previous commit\
+HEAD~1 = head minus one, means the commit before the previous commit\
+	git diff HEAD~1 mars.txt \
+	HEAD~1 can be substituted for the identifier\
+git checkout HEAD mars.txt = restores an old version of a file\
+	git checkout [identifier] mars.txt can roll back to previous version\
+\
+We may not want everything to be deposited in the public repository, like password files etc. \
+	Make a .gitignore file\
+		*.dat\
+		/results\
+	Now, git status is much more clean\
+	git add -f = can override ignore settings\
+	git status \'97ignored = can see ignored files\
+\
+Collaborating\
+\
 \
 }
