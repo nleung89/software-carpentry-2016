@@ -251,4 +251,57 @@ analyze("inflammation-01.csv")
 dev.off()
 
 # This will save it to a parent directory of current working directory
-pdf("../inflammation-01.pdf)
+pdf("../inflammation-01.pdf")
+
+# Conditionals
+## Example 1
+num <- 200
+if (num > 100) {
+    print("greater")
+    } else {
+    print("not greater")
+    }
+    print("done")
+    
+num > 100
+num < 100
+
+## Example 2
+num <- 102
+if (num > 100) {
+  print("num is greater than 100")
+}
+  
+## Example 3  
+sign <- function(num) {
+  if (num > 0) {
+    return(1)
+  } else if (num == 0) {
+    return(0)
+  } else {
+    return(-1)
+  }
+}
+
+sign(-3)
+sign(0)
+sign(2/3)
+    
+## Example 4
+if (1 > 0 & -1 > 0) {
+  print("both parts are true")
+} else {
+  print("at least one part is not true")
+}
+
+if (1 > 0 | -1 > 0) {
+  print("at least one part is true")
+} else {
+  print("neither part is true")
+}
+    
+    
+    
+    
+    
+    
